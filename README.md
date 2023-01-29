@@ -1,5 +1,5 @@
 # Discord Gateway JS
-Inspired by [discord.js](https://github.com/discordjs/discord.js), this library allows you to connect to an account of a real person and not a robot.
+Inspired by [Discord.JS](https://github.com/discordjs/discord.js), this library allows you to connect to an account of a real person and not a robot.
 
 ## Example
 ### config.json
@@ -43,5 +43,5 @@ for (const file of commands) {
 client.login(config.token);
 ```
 # How to get your token
-### Go to [discord](https://discord.com/app) Press `F12`
+### Go to [Discord](https://discord.com/app) Press `F12`
 ![image](https://user-images.githubusercontent.com/93871422/215302448-d383114b-1b6d-4d8d-83c7-9e6b81b365c4.png)
