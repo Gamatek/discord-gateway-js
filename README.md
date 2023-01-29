@@ -44,5 +44,5 @@ client.login(config.token);
 ```
 
 # How to get your token
-- 1. Press `F12`
-- 2. ![image](https://user-images.githubusercontent.com/93871422/215302448-d383114b-1b6d-4d8d-83c7-9e6b81b365c4.png)
+- Press `F12`
+![image](https://user-images.githubusercontent.com/93871422/215302448-d383114b-1b6d-4d8d-83c7-9e6b81b365c4.png)
