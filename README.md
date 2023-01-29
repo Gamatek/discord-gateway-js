@@ -1,6 +1,6 @@
 # Discord Gateway JS
 Inspired by [Discord.JS](https://github.com/discordjs/discord.js), this library allows you to connect to an account of a real person and not a robot.
-To install, make `npm i axios ws`.
+To install it, run `npm i axios ws`.
 
 ## Example
 ### config.json
