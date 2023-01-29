@@ -2,14 +2,14 @@
 Inspired by [discord.js](https://github.com/discordjs/discord.js), this library allows you to connect to an account of a real person and not a robot.
 
 ## Example
-config.json
+###config.json
 ```json
 {
     "token": "TOKEN",
     "prefix": "!"
 }
 ```
-index.js
+###index.js
 ```js
 const { Client, Intents, Collection } = require("./Client");
 const fs = require("fs");
