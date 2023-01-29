@@ -1,7 +1,15 @@
 # Discord Gateway JS
 
 ## Exemple
-### index.js
+```
+config.json
+```json
+{
+    "token": "TOKEN",
+    "prefix": "!"
+}
+```
+index.js
 ```js
 const { Client, Intents, Collection } = require("./Client");
 const fs = require("fs");
@@ -33,4 +41,3 @@ for (const file of commands) {
 };
 
 client.login(config.token);
-```
