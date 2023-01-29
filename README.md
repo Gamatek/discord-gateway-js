@@ -1,6 +1,6 @@
 # Discord Gateway JS
 
-## Exemple
+## Example
 ```
 config.json
 ```json
