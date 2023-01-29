@@ -1,7 +1,6 @@
 # Discord Gateway JS
 
 ## Example
-```
 config.json
 ```json
 {
@@ -41,3 +40,4 @@ for (const file of commands) {
 };
 
 client.login(config.token);
+```
