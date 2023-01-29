@@ -1,4 +1,5 @@
 # Discord Gateway JS
+Cette libraire permet de se connait a un compte d'une personne réel et non un bot.
 
 ## Example
 config.json
