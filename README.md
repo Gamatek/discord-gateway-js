@@ -42,7 +42,7 @@ for (const file of commands) {
 
 client.login(config.token);
 ```
-### /commands/ping.js
+### commands/ping.js
 ```js
 const { Client, Message } = require("../Client");
 const config = require("../config.json");
