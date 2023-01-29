@@ -1,5 +1,5 @@
 # Discord Gateway JS
-Inspired by discord.js, this library allows you to connect to an account of a real person and not a robot.
+Inspired by [discord.js](https://github.com/discordjs/discord.js), this library allows you to connect to an account of a real person and not a robot.
 
 ## Example
 config.json
