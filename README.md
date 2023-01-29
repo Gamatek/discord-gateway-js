@@ -42,6 +42,30 @@ for (const file of commands) {
 
 client.login(config.token);
 ```
+### /commands/ping.js
+```js
+const { Client, Message } = require("../Client");
+const config = require("../config.json");
+
+module.exports = {
+    description: "Display the ping of the bot.",
+    /**
+     * 
+     * @param {Client} client 
+     * @param {Message} message 
+     * @param {Array} args 
+     */
+    exe(client, message, args) {
+        message.reply({
+            content: "📡 Ping..."
+        }).then((msg) => {
+            msg.edit({
+                content: `🏓 Pong ${msg.createdTimestamp-message.createdTimestamp}ms.`
+            });
+        }).catch(() => {});
+    }
+};
+```
 # How to get your token
 ### Go to [Discord](https://discord.com/app) end press `F12`
 ![image](https://user-images.githubusercontent.com/93871422/215302448-d383114b-1b6d-4d8d-83c7-9e6b81b365c4.png)
