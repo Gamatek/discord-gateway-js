@@ -1341,14 +1341,107 @@ class Client extends EventEmitter {
             switch (op) {
                 case 0: {
                     switch (t) {
+                        /**
+                         * Events
+                         * https://discord.com/developers/docs/topics/gateway-events#receive-events
+                         */
+                
+                        case "HELLO": {}; break;
                         case "READY": {
                             this.user = new User(d.user, this);
                             this.emit("ready");
                         }; break;
+                        case "RESUMED": {}; break;
+                        case "RECONNECT": {}; break;
+                        case "INVALID_SESSION": {}; break;
+                        case "APPLICATION_COMMAND_PERMISSIONS_UPDATE": {}; break;
 
+                        // AUTO MODERATION
+                        case "AUTO_MODERATION_RULE_CREATE": {}; break;
+                        case "AUTO_MODERATION_RULE_UPDATE": {}; break;
+                        case "AUTO_MODERATION_RULE_DELETE": {}; break;
+                        case "AUTO_MODERATION_ACTION_EXECUTION": {}; break;
+
+                        // CHANNEL
+                        case "CHANNEL_CREATE": {}; break;
+                        case "CHANNEL_UPDATE": {}; break;
+                        case "CHANNEL_DELETE": {}; break;
+                        case "CHANNEL_PINS_UPDATE": {}; break;
+
+                        // THREAD
+                        case "THREAD_CREATE": {}; break;
+                        case "THREAD_UPDATE": {}; break;
+                        case "THREAD_DELETE": {}; break;
+                        case "THREAD_LIST_SYNC": {}; break;
+                        case "THREAD_MEMBER_UPDATE": {}; break;
+                        case "THREAD_MEMBERS_UPDATE": {}; break;
+
+                        // GUILD
+                        case "GUILD_CREATE": {}; break;
+                        case "GUILD_UPDATE": {}; break;
+                        case "GUILD_AUDIT_LOG_ENTRY_CREATE": {}; break;
+                        case "GUILD_BAN_ADD": {}; break;
+                        case "GUILD_BAN_REMOVE": {}; break;
+                        case "GUILD_EMOJIS_UPDATE": {}; break;
+                        case "GUILD_STICKERS_UPDATE": {}; break;
+                        case "GUILD_INTEGRATIONS_UPDATE": {}; break;
+                        case "GUILD_MEMBER_ADD": {}; break;
+                        case "GUILD_MEMBER_REMOVE": {}; break;
+                        case "GUILD_MEMBER_UPDATE": {}; break;
+                        case "GUILD_MEMBERS_CHUNK": {}; break;
+                        case "GUILD_ROLE_CREATE": {}; break;
+                        case "GUILD_ROLE_UPDATE": {}; break;
+                        case "GUILD_ROLE_DELETE": {}; break;
+                        case "GUILD_SCHEDULED_EVENT_CREATE": {}; break;
+                        case "GUILD_SCHEDULED_EVENT_UPDATE": {}; break;
+                        case "GUILD_SCHEDULED_EVENT_DELETE": {}; break;
+                        case "GUILD_SCHEDULED_EVENT_USER_ADD": {}; break;
+                        case "GUILD_SCHEDULED_EVENT_USER_REMOVE": {}; break;
+
+                        // INTEGRATION
+                        case "INTEGRATION_CREATE": {}; break;
+                        case "INTEGRATION_UPDATE": {}; break;
+                        case "INTEGRATION_DELETE": {}; break;
+
+                        // INTERACTION
+                        case "INTERACTION_CREATE": {}; break;
+
+                        // Invite
+                        case "INVITE_CREATE": {}; break;
+                        case "INVITE_DELETE": {}; break;
+
+                        // MESSAGE
                         case "MESSAGE_CREATE": {
                             this.emit("messageCreate", new Message(d, this));
                         }; break;
+                        case "MESSAGE_UPDATE": {}; break;
+                        case "MESSAGE_DELETE": {}; break;
+                        case "MESSAGE_DELETE_BULK": {}; break;
+                        case "MESSAGE_REACTION_ADD": {}; break;
+                        case "MESSAGE_REACTION_REMOVE": {}; break;
+                        case "MESSAGE_REACTION_REMOVE_ALL": {}; break;
+                        case "MESSAGE_REACTION_REMOVE_EMOJI": {}; break;
+
+                        // PRESENCE
+                        case "PRESENCE_UPDATE": {}; break;
+
+                        // STAGE INSTANCE
+                        case "STAGE_INSTANCE_CREATE": {}; break;
+                        case "STAGE_INSTANCE_UPDATE": {}; break;
+                        case "STAGE_INSTANCE_DELETE": {}; break;
+
+                        //  TYPING
+                        case "TYPING_START": {}; break;
+
+                        // USER
+                        case "USER_UPDATE": {}; break;
+
+                        // VOICE
+                        case "VOICE_STATE_UPDATE": {}; break;
+                        case "VOICE_SERVER_UPDATE": {}; break;
+
+                        // WEBHOOKS
+                        case "WEBHOOKS_UPDATE": {}; break;
                     };
                 }; break;
 
