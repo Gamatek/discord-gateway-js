@@ -68,5 +68,5 @@ module.exports = {
 };
 ```
 # How to get your token
-### Go to [Discord](https://discord.com/app) end press `F12`
+### Go to [Discord](https://discord.com/app) and press `F12`
 ![image](https://user-images.githubusercontent.com/93871422/215302448-d383114b-1b6d-4d8d-83c7-9e6b81b365c4.png)
