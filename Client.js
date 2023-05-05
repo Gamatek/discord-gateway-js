@@ -17,9 +17,11 @@ const utils = {
 
         return color;
     },
+
     cloneObject(obj) {
         return Object.assign(Object.create(obj), obj);
     },
+
     verifyString(
         data,
         errorMessage = `Expected a string, got ${data} instead.`,
@@ -1317,6 +1319,11 @@ class Client extends EventEmitter {
         this.readyAt = null;
         this.interval = null;
         this.user = null;
+        this.cache = {
+            guilds: new Collection(),
+            users: new Collection(),
+            channels: new Collection()
+        };
     }
 
     heartbeat(ms) {
@@ -1328,12 +1335,23 @@ class Client extends EventEmitter {
         }, ms);
     }
 
-    login(token) {
-        this.token = token;
+    async login(email, password) {
+        this.token = (await axios("https://discord.com/api/v10/auth/login", {
+            method: "POST",
+            headers: {
+                "Origin": "https://discord.com",
+                "Content-Type": "application/json"
+            },
+            data: {
+                login: email,
+                password
+            }
+        })).data.token;
         this.ws = new WebSocket("wss://gateway.discord.gg/?v=6&encoding=json");
 
         this.ws.on("message", async (data) => {
             /**
+             * DOCS:
              * https://discord.com/developers/docs/topics/gateway
              * https://github.com/meew0/discord-api-docs-1/blob/master/docs/topics/GATEWAY.md
              */
@@ -1342,7 +1360,7 @@ class Client extends EventEmitter {
                 case 0: {
                     switch (t) {
                         /**
-                         * Events
+                         * EVENTS: If you want to add another event
                          * https://discord.com/developers/docs/topics/gateway-events#receive-events
                          */
                 
@@ -1417,7 +1435,15 @@ class Client extends EventEmitter {
                         case "MESSAGE_UPDATE": {}; break;
                         case "MESSAGE_DELETE": {}; break;
                         case "MESSAGE_DELETE_BULK": {}; break;
-                        case "MESSAGE_REACTION_ADD": {}; break;
+                        case "MESSAGE_REACTION_ADD": {
+                            this.emit("messageReactionAdd", {
+                                guildId: d.guild_id,
+                                channelId: d.channel_id,
+                                messageId: d.message_id,
+                                name: d.emoji.name,
+                                id: d.emoji.id
+                            }, d.user_id);
+                        }; break;
                         case "MESSAGE_REACTION_REMOVE": {}; break;
                         case "MESSAGE_REACTION_REMOVE_ALL": {}; break;
                         case "MESSAGE_REACTION_REMOVE_EMOJI": {}; break;
@@ -1456,7 +1482,7 @@ class Client extends EventEmitter {
             this.ws.send(JSON.stringify({
                 op: 2,
                 d: {
-                    token,
+                    token: this.token,
                     intents: this.intents,
                     properties: {
                         $os: "linux",
