@@ -3,13 +3,6 @@ Inspired by [Discord.JS](https://github.com/discordjs/discord.js), this library 
 To install it, run `npm i axios ws`.
 
 ## Example
-### config.json
-```json
-{
-
-}
-```
-### index.js
 ```js
 const { Client, Intents, Collection } = require("./Client");
 
