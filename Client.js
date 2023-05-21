@@ -1335,8 +1335,10 @@ class Client extends EventEmitter {
         }, ms);
     }
 
-    async login(email, password) {
-        this.token = (await axios("https://discord.com/api/v10/auth/login", {
+    //async login(email, password) {
+    login(token) {
+        this.token =token;
+        /*this.token = (await axios("https://discord.com/api/v10/auth/login", {
             method: "POST",
             headers: {
                 "Origin": "https://discord.com",
@@ -1346,7 +1348,7 @@ class Client extends EventEmitter {
                 login: email,
                 password
             }
-        })).data.token;
+        })).data.token;*/
         this.ws = new WebSocket("wss://gateway.discord.gg/?v=6&encoding=json");
 
         this.ws.on("message", async (data) => {
