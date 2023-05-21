@@ -10,7 +10,9 @@ const { Client, Intents, Collection } = require("./Client");
 
 const client = new Client({
     intents: [
-        Intents.FLAGS.GUILDS
+        Intents.FLAGS.GUILDS,
+        Intents.FLAGS.GUILD_MESSAGES,
+        Intents.FLAGS.MESSAGE_CONTENT
     ]
 });
 client.prefix = "!";
