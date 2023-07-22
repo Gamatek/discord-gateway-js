@@ -39,5 +39,5 @@ client.on("messageCreate", (message) => {
     };
 });
 
-client.login("YOUR_EMAIL", "YOUR_PASSWORD");
+client.login("TOKEN");
 ```
